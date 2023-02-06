@@ -1,10 +1,41 @@
-<!--
-  @description       : 
-  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
-  @group             : 
-  @last modified on  : 01-09-2023
-  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
--->
-<template>
-    <p>Hello {World}</p>
-</template>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@salesforce-ux/design-system@2.7.5/assets/styles/salesforce-lightning-design-system.min.css" />
+    <style>
+        .resume-card {
+            width: 80%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slds-card resume-card">
+        <header class="slds-card__header slds-grid">
+            <h1 class="slds-text-heading_large slds-truncate slds-m-bottom_small">Your Name</h1>
+        </header>
+        <div class="slds-card__body">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">Summary</h2>
+            <p>Brief summary of your experience and skills goes here.</p>
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">Work Experience</h2>
+            <ul>
+                <li>
+                    <h3 class="slds-text-heading_small">Company Name</h3>
+                    <p>Job title and description go here.</p>
+                </li>
+                <li>
+                    <h3 class="slds-text-heading_small">Company Name</h3>
+                    <p>Job title and description go here.</p>
+                </li>
+            </ul>
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">Education</h2>
+            <ul>
+                <li>
+                    <h3 class="slds-text-heading_small">School Name</h3>
+                    <p>Degree and major go here.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
