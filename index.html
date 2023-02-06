@@ -1,41 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@salesforce-ux/design-system@2.7.5/assets/styles/salesforce-lightning-design-system.min.css" />
-    <style>
-        .resume-card {
-            width: 80%;
-            margin: 20px auto;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@salesforce-ux/design-system@2.10.5/assets/styles/salesforce-lightning-design-system.min.css" />
+    <title>Profile Page</title>
 </head>
+
 <body>
-    <div class="slds-card resume-card">
-        <header class="slds-card__header slds-grid">
-            <h1 class="slds-text-heading_large slds-truncate slds-m-bottom_small">Your Name</h1>
-        </header>
-        <div class="slds-card__body">
-            <h2 class="slds-text-heading_medium slds-m-bottom_medium">Summary</h2>
-            <p>Brief summary of your experience and skills goes here.</p>
-            <h2 class="slds-text-heading_medium slds-m-bottom_medium">Work Experience</h2>
-            <ul>
-                <li>
-                    <h3 class="slds-text-heading_small">Company Name</h3>
-                    <p>Job title and description go here.</p>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-text-align_center slds-m-top_medium">
+                <img class="slds-avatar slds-avatar_large" src="https://randomuser.me/api/portraits/women/42.jpg"
+                    alt="Profile Picture" />
+            </div>
+            <h1 class="slds-text-align_center slds-text-heading_medium">
+                Jane Doe
+            </h1>
+            <p class="slds-text-align_center slds-text-body_regular">
+                Software Engineer
+            </p>
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                About Me
+            </h2>
+            <p class="slds-text-body_regular slds-m-bottom_medium">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat.
+            </p>
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                Skills
+            </h2>
+            <ul class="slds-list_horizontal slds-wrap">
+                <li class="slds-list__item slds-m-right_medium">
+                    <span class="slds-text-body_regular">Java</span>
                 </li>
-                <li>
-                    <h3 class="slds-text-heading_small">Company Name</h3>
-                    <p>Job title and description go here.</p>
+                <li class="slds-list__item slds-m-right_medium">
+                    <span class="slds-text-body_regular">Javascript</span>
                 </li>
-            </ul>
-            <h2 class="slds-text-heading_medium slds-m-bottom_medium">Education</h2>
-            <ul>
-                <li>
-                    <h3 class="slds-text-heading_small">School Name</h3>
-                    <p>Degree and major go here.</p>
+                <li class="slds-list__item">
+                    <span class="slds-text-body_regular">React</span>
                 </li>
             </ul>
         </div>
     </div>
 </body>
+
 </html>
