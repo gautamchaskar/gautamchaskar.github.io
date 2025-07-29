@@ -1,0 +1,23 @@
+body {
+    padding-top: 56px; /* Adjust for fixed navbar height */
+}
+
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+    color: white;
+}
+
+.card {
+    border: 1px solid #343a40; /* Darker border for cards */
+}
+
+.form-control {
+    color: #fff !important;
+    background-color: #343a40 !important;
+    border-color: #495057 !important;
+}
+
+.form-control:focus {
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}

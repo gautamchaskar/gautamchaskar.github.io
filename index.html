@@ -3,105 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gautam Chaskar - Interactive Resume</title>
+    <title>Gautam Chaskar - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1500x800') center center;
-            background-size: cover;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        #hero h1 {
-            font-size: 4.5rem;
-            font-weight: bold;
-        }
-
-        #hero .lead {
-            font-size: 1.75rem;
-        }
-
-        .navbar {
-            transition: background-color 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            background-color: rgba(33, 37, 41, 0.9) !important;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            text-transform: uppercase;
-            margin-left: 15px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-        }
-
-        section h2::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background-color: #007bff;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .card {
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .list-group-item {
-            border: none;
-            padding: 10px 0;
-        }
-
-        .social-links a {
-            color: white;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #007bff;
-        }
-
-        footer {
-            background-color: #212529;
-            color: white;
-            padding: 20px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-dark text-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Gautam Chaskar</a>
@@ -110,146 +16,71 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="hero" class="d-flex align-items-center justify-content-center text-white text-center">
+    <section id="home" class="d-flex align-items-center vh-100 text-center">
         <div class="container">
-            <h1 class="display-3">Gautam Chaskar</h1>
-            <p class="lead">Salesforce Developer</p>
-            <a href="#contact" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
+            <h1 class="display-4">Hi, I'm Gautam Chaskar</h1>
+            <p class="lead">A passionate software engineer specializing in building robust and scalable applications.</p>
+            <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
         </div>
-    </header>
+    </section>
 
     <section id="about" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">About Me</h2>
-            <p class="text-center lead">
-                <!-- Placeholder for professional summary. Please provide 2-3 sentences. -->
-                A dedicated and results-driven Salesforce Developer with a passion for building innovative solutions and optimizing processes. Experienced in leveraging Salesforce tools and custom code to enhance functionality and drive business success.
-            </p>
-        </div>
-    </section>
-
-    <section id="experience" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Professional Experience</h2>
             <div class="row">
-                <div class="col-md-10 mx-auto">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Salesforce Developer</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">UST | Sep 2021 - Ongoing</h6>
-                            <ul>
-                                <li>Working on salesforce projects to enhance and build new functionality using salesforce tools and custom code.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Salesforce Intern</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">UST | Mar 2021 – Aug 2021</h6>
-                            <ul>
-                                <li>Got a chance to get trained by industry experts in salesforce administration and development.</li>
-                                <li>In this 6-month training, we got trained on topics like app development, automation tools, apex triggers, async apex, visualforce, aura, LWC.</li>
-                                <li>Also got a chance to work on ongoing SFDC projects.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Salesforce Intern</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Bugendai Tech | Oct 2020 - Jan 2021</h6>
-                            <ul>
-                                <li>It started with one month training on the salesforce administration.</li>
-                                <li>After that we got a chance to work on a client project.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Student Mentor</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Apsit Skills | Aug 2020 - Sep 2020</h6>
-                            <ul>
-                                <li>Mentored students in the apsit skill holistic internship program where I got a chance to guide and mentor 10+ interns with successful completion of their internship.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Salesforce Intern</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Apsit Skills | Jun 2020 - July 2020</h6>
-                            <ul>
-                                <li>As a part of training completed some of the trails from trailhead and some courses from coursera learning portal.</li>
-                                <li>Completed the hands-on project on salesforce platform.</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="col-md-8 mx-auto">
+                    <p>I am a dedicated software engineer with a strong background in full-stack development. My expertise includes designing, developing, and deploying high-performance web applications. I am passionate about learning new technologies and solving complex problems.</p>
+                    <p>In my free time, I enjoy exploring new programming languages, contributing to open-source projects, and staying up-to-date with the latest industry trends.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-5">
+    <section id="projects" class="py-5 bg-secondary">
         <div class="container">
-            <h2 class="text-center mb-4">Projects</h2>
+            <h2 class="text-center mb-4">My Projects</h2>
             <div class="row">
-                <div class="col-md-10 mx-auto">
-                    <div class="card mb-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-dark text-light h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Credit and Cards</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Salesforce Developer | Mar 2022 – Ongoing</h6>
-                            <p class="card-text">Working as a salesforce developer and a release manager.</p>
-                            <h6>Responsibilities:</h6>
-                            <ul>
-                                <li>Building custom UI components using Lightning Web Components framework.</li>
-                                <li>Optimizing the runtime for existing processes like batch classes, triggers, apex methods.</li>
-                                <li>Handle the deployment process for multiple streams and the changes back to the cross-stream sandboxes.</li>
-                                <li>Support the team in case of issues to go get their storied deployed in the required sprint.</li>
-                                <li>Maintain the log of all deployments and keep the team informed about it.</li>
-                                <li>Implementation of salesforce solutions mentioned in the stories assigned as a part of the ongoing sprint.</li>
-                            </ul>
+                            <h5 class="card-title">Project One</h5>
+                            <p class="card-text">A brief description of Project One, highlighting its key features and technologies used.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
-                    <div class="card mb-4">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-dark text-light h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Dell SFDC Enhancements Surge</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Salesforce Developer | May 2021 – Feb 2022</h6>
-                            <p class="card-text">Worked as a salesforce developer with the salesforce architect to build the automation for high volume data sets. While working with this large dataset build the automation which will not fail because of the high volume.</p>
-                            <h6>Responsibilities:</h6>
-                            <ul>
-                                <li>Implementation of salesforce solutions mentioned in the stories assigned as a part of the ongoing sprint.</li>
-                                <li>Creation of custom objects and their fields. Creating automation processes using apex and testing the functionality using unit testing with test classes.</li>
-                                <li>Creating custom labels to control and manipulate the automation processes and apex codes.</li>
-                                <li>Creating batch classes to update the records with specific criteria and schedule the same in specific intervals.</li>
-                                <li>Creating platform events, their fields, and apex triggers to publish the events.</li>
-                                <li>Updating the versions of the old classes that are going to be unsupported by salesforce.</li>
-                                <li>Be involved in the solution designing with an architect for client requirements to understand and learn the different options for requirements and their pros and cons.</li>
-                            </ul>
+                            <h5 class="card-title">Project Two</h5>
+                            <p class="card-text">A brief description of Project Two, highlighting its key features and technologies used.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
-                    <div class="card mb-4">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-dark text-light h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Notaroo Salesforce</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Salesforce Developer Intern | Dec 2020 – Jan 2021</h6>
-                            <p class="card-text">Worked on implementation of the current business process in salesforce CRM to transform and automate most of the processes using automation tools in salesforce.</p>
-                            <h6>Responsibilities:</h6>
-                            <ul>
-                                <li>Analyse the client’s business requirements and build a data model for the same.</li>
-                                <li>Getting key insights on client business processes to finalize the automation processes and keep the records of the same.</li>
-                                <li>Implementing service cloud functionalities like Email-to-Case, Case Assignment rules, omnichannel routing, knowledge articles, etc...</li>
-                                <li>Preparing documentation for the final solutions and making them in sync with the client and team.</li>
-                                <li>Presenting the implemented solutions to client during weekly meetups.</li>
-                                <li>Help the BA in understanding the client business process and generating test cases.</li>
-                            </ul>
+                            <h5 class="card-title">Project Three</h5>
+                            <p class="card-text">A brief description of Project Three, highlighting its key features and technologies used.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -257,104 +88,37 @@
         </div>
     </section>
 
-    <section id="skills" class="bg-light py-5">
+    <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Skills & Certifications</h2>
+            <h2 class="text-center mb-4">Contact Me</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <h3 class="mb-3">Technical Skills</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Apex</li>
-                        <li class="list-group-item">SOQL</li>
-                        <li class="list-group-item">Unit Testing</li>
-                        <li class="list-group-item">LWC</li>
-                        <li class="list-group-item">HTML / CSS / JavaScript</li>
-                        <li class="list-group-item">Salesforce Advance Formulas</li>
-                        <li class="list-group-item">Data Modeling</li>
-                        <li class="list-group-item">Salesforce Automation Tools</li>
-                        <li class="list-group-item">Salesforce Security Enhancements</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h3 class="mb-3">Certifications</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Salesforce Certified Administrator</li>
-                        <li class="list-group-item">Salesforce Certified App Builder</li>
-                        <li class="list-group-item">Salesforce Certified Developer I</li>
-                        <li class="list-group-item">Salesforce Certified JavaScript Developer I</li>
-                        <li class="list-group-item">Apex Academy: The Power of SOQL</li>
-                    </ul>
+                <div class="col-md-8 mx-auto">
+                    <p class="text-center">Feel free to reach out to me for collaborations or just to say hello!</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control bg-dark text-light border-secondary" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control bg-dark text-light border-secondary" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control bg-dark text-light border-secondary" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Education</h2>
-            <div class="row">
-                <div class="col-md-10 mx-auto">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">BE</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">A P Shah Institute of Technology, Mumbai University | 2021 | 7.57 CGPA</h6>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">HSC</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Anna Saheb Awate College, State Board of Maharashtra | 2016 | 55.23%</h6>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">SSC</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">H B G Vidyalaya, State Board of Maharashtra | 2014 | 83.80%</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-dark text-white py-5">
-        <div class="container text-center">
-            <h2 class="mb-4">Get in Touch</h2>
-            <p class="lead">I'm always open to new opportunities and collaborations.</p>
-            <div class="social-links mt-4">
-                <a href="https://www.linkedin.com/in/gautamchaskar" target="_blank" class="text-white mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="https://trailblazer.me/id/gautamchaskar" target="_blank" class="text-white mx-2"><i class="fas fa-fire fa-2x"></i></a>
-                <!-- Placeholder for Email and GitHub. Uncomment and update if provided. -->
-                <!-- <a href="mailto:your.email@example.com" class="text-white mx-2"><i class="fas fa-envelope fa-2x"></i></a> -->
-                <!-- <a href="https://github.com/yourusername" target="_blank" class="text-white mx-2"><i class="fab fa-github fa-2x"></i></a> -->
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="bg-dark text-light text-center py-3">
         <p>&copy; 2025 Gautam Chaskar. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
