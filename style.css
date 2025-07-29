@@ -1,23 +1,107 @@
 body {
+    font-family: 'Roboto', sans-serif;
     padding-top: 56px; /* Adjust for fixed navbar height */
+    background-color: #1a1a1a; /* Darker background */
+    color: #e0e0e0; /* Lighter text color */
+}
+
+.navbar {
+    background-color: #222222 !important; /* Darker navbar */
+}
+
+.navbar-brand,
+.nav-link {
+    color: #e0e0e0 !important;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
 }
 
 #home {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#home .display-4 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#home .lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0a58ca;
+    border-color: #0a58ca;
+}
+
+section {
+    padding: 80px 0;
+}
+
+section:nth-of-type(even) {
+    background-color: #222222;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #e0e0e0;
 }
 
 .card {
-    border: 1px solid #343a40; /* Darker border for cards */
+    background-color: #2a2a2a; /* Darker card background */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #0d6efd;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #b0b0b0;
 }
 
 .form-control {
-    color: #fff !important;
-    background-color: #343a40 !important;
-    border-color: #495057 !important;
+    background-color: #2a2a2a !important;
+    border: 1px solid #444444 !important;
+    color: #e0e0e0 !important;
 }
 
 .form-control:focus {
     border-color: #0d6efd !important;
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}
+
+footer {
+    background-color: #222222;
+    color: #b0b0b0;
+    padding: 20px 0;
 }
