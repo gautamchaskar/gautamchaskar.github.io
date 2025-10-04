@@ -46,28 +46,62 @@
 
     <section id="linkedin-posts" class="py-16 bg-gray-900">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center gap-8">
-                <article class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 w-full max-w-xl">
-                    <div class="p-6">
-                        <div class="relative" style="padding-top: 177.7778%;"> <!-- Aspect ratio 9:16 (height/width * 100) -->
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7373380393846255617?collapsed=1" frameborder="0" allowfullscreen="" title="Embedded post" class="absolute top-0 left-0 w-full h-full"></iframe>
-                        </div>
+            <div class="relative w-full max-w-3xl mx-auto">
+                <div id="linkedin-carousel" class="relative h-[750px] overflow-hidden rounded-lg">
+                    <!-- Item 1 -->
+                    <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="0">
+                        <article class="bg-gray-800 rounded-lg shadow-lg overflow-hidden w-full h-full">
+                            <div class="p-6 h-full">
+                                <div class="relative h-full">
+                                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7373380393846255617?collapsed=1" frameborder="0" allowfullscreen="" title="Embedded post" class="absolute top-0 left-0 w-full h-full"></iframe>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </article>
-                <article class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 w-full max-w-xl">
-                    <div class="p-6">
-                        <div class="relative" style="padding-top: 177.7778%;"> <!-- Aspect ratio 9:16 (height/width * 100) -->
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7373380393846255617" frameborder="0" allowfullscreen="" title="Embedded post" class="absolute top-0 left-0 w-full h-full"></iframe>
-                        </div>
+                    <!-- Item 2 -->
+                    <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="1">
+                        <article class="bg-gray-800 rounded-lg shadow-lg overflow-hidden w-full h-full">
+                            <div class="p-6 h-full">
+                                <div class="relative h-full">
+                                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7373380393846255617" frameborder="0" allowfullscreen="" title="Embedded post" class="absolute top-0 left-0 w-full h-full"></iframe>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </article>
-                <article class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 w-full max-w-xl">
-                    <div class="p-6">
-                        <div class="relative" style="padding-top: 177.7778%;"> <!-- Aspect ratio 9:16 (height/width * 100) -->
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7316696248227389441" frameborder="0" allowfullscreen="" title="Embedded post" class="absolute top-0 left-0 w-full h-full"></iframe>
-                        </div>
+                    <!-- Item 3 -->
+                    <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="2">
+                        <article class="bg-gray-800 rounded-lg shadow-lg overflow-hidden w-full h-full">
+                            <div class="p-6 h-full">
+                                <div class="relative h-full">
+                                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7316696248227389441" frameborder="0" allowfullscreen="" title="Embedded post" class="absolute top-0 left-0 w-full h-full"></iframe>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </article>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse" data-carousel-indicators>
+                    <button type="button" class="w-3 h-3 rounded-full bg-gray-400" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full bg-gray-600 hover:bg-gray-500" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full bg-gray-600 hover:bg-gray-500" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
             </div>
         </div>
     </section>
@@ -101,40 +135,34 @@
                 <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-500 rounded"></span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
-                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-img="images/certifications/pd2.png" data-title="Salesforce Certified Platform Developer II">
-                    <img src="images/certifications/pd2.png" alt="Salesforce Certified Platform Developer II" class="w-16 h-16 mr-4">
+                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-title="Salesforce Certified Platform Developer II">
+                    <img src="images/certifications/pd2.png" alt="Salesforce Certified Platform Developer II" class="w-16 h-16 mr-4 certification-img">
                     <span>Salesforce Certified Platform Developer II - February 28, 2025</span>
                 </div>
-                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-img="images/certifications/AIAssociate.png" data-title="Salesforce Certified AI Associate">
-                    <img src="images/certifications/AIAssociate.png" alt="Salesforce Certified AI Associate" class="w-16 h-16 mr-4">
+                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-title="Salesforce Certified AI Associate">
+                    <img src="images/certifications/AIAssociate.png" alt="Salesforce Certified AI Associate" class="w-16 h-16 mr-4 certification-img">
                     <span>Salesforce Certified AI Associate - December 7, 2024</span>
                 </div>
-                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-img="images/certifications/PlatformFoundation.png" data-title="Salesforce Certified Platform Foundations">
-                    <img src="images/certifications/PlatformFoundation.png" alt="Salesforce Certified Platform Foundations" class="w-16 h-16 mr-4">
+                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-title="Salesforce Certified Platform Foundations">
+                    <img src="images/certifications/PlatformFoundation.png" alt="Salesforce Certified Platform Foundations" class="w-16 h-16 mr-4 certification-img">
                     <span>Salesforce Certified Platform Foundations - September 1, 2023</span>
                 </div>
-                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-img="images/certifications/JSDeveloper.png" data-title="Salesforce Certified JavaScript Developer">
-                    <img src="images/certifications/JSDeveloper.png" alt="Salesforce Certified JavaScript Developer" class="w-16 h-16 mr-4">
+                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-title="Salesforce Certified JavaScript Developer">
+                    <img src="images/certifications/JSDeveloper.png" alt="Salesforce Certified JavaScript Developer" class="w-16 h-16 mr-4 certification-img">
                     <span>Salesforce Certified JavaScript Developer - January 22, 2023</span>
                 </div>
-                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-img="images/certifications/AppBuilder.png" data-title="Salesforce Certified Platform App Builder">
-                    <img src="images/certifications/AppBuilder.png" alt="Salesforce Certified Platform App Builder" class="w-16 h-16 mr-4">
+                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-title="Salesforce Certified Platform App Builder">
+                    <img src="images/certifications/AppBuilder.png" alt="Salesforce Certified Platform App Builder" class="w-16 h-16 mr-4 certification-img">
                     <span>Salesforce Certified Platform App Builder - September 11, 2022</span>
                 </div>
-                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-img="images/certifications/Pd1.png" data-title="Salesforce Certified Platform Developer">
-                    <img src="images/certifications/Pd1.png" alt="Salesforce Certified Platform Developer" class="w-16 h-16 mr-4">
+                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-title="Salesforce Certified Platform Developer">
+                    <img src="images/certifications/Pd1.png" alt="Salesforce Certified Platform Developer" class="w-16 h-16 mr-4 certification-img">
                     <span>Salesforce Certified Platform Developer - July 9, 2022</span>
                 </div>
-                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-img="images/certifications/admin.png" data-title="Salesforce Certified Platform Administrator">
-                    <img src="images/certifications/admin.png" alt="Salesforce Certified Platform Administrator" class="w-16 h-16 mr-4">
+                <div class="certification-item bg-gray-800 p-4 rounded-lg shadow-md flex items-center cursor-pointer" data-title="Salesforce Certified Platform Administrator">
+                    <img src="images/certifications/admin.png" alt="Salesforce Certified Platform Administrator" class="w-16 h-16 mr-4 certification-img">
                     <span>Salesforce Certified Platform Administrator - December 4, 2020</span>
                 </div>
-            </div>
-
-            <!-- Certification Modal -->
-            <div id="certification-modal" class="absolute bg-gray-800 p-4 rounded-lg shadow-lg z-50 hidden pointer-events-none transform -translate-x-1/2 -translate-y-1/2" style="max-width: 300px;">
-                <h3 id="modal-title" class="text-lg font-bold text-blue-400 mb-2"></h3>
-                <img id="modal-image" src="" alt="Certification" class="w-full h-auto rounded-lg">
             </div>
         </div>
     </section>
