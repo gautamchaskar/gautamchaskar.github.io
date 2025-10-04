@@ -1,0 +1,39 @@
+.certification-item {
+    transition: transform 0.3s ease-in-out;
+    position: relative; /* Needed for z-index to work */
+    /* Removed overflow: hidden; to prevent clipping */
+}
+
+.certification-item:hover {
+    transform: scale(1.03); /* Scale the entire box */
+    z-index: 10; /* Bring to front on hover */
+}
+
+/* Removed image-specific hover styles */
+
+#skills li {
+    transition: transform 0.3s ease-in-out;
+    position: relative; /* Needed for z-index to work */
+}
+
+#skills li:hover {
+    transform: scale(1.03);
+    z-index: 10;
+}
+
+/* Carousel styles */
+.carousel-item {
+    transition: transform 0.7s ease-in-out;
+}
+
+.carousel-item.active {
+    transform: translateX(0);
+}
+
+.carousel-item.left {
+    transform: translateX(-100%);
+}
+
+.carousel-item.right {
+    transform: translateX(100%);
+}
