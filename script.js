@@ -1,115 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Certification Hover Logic
-    const certificationItems = document.querySelectorAll('.certification-item');
-    const certificationModal = document.getElementById('certification-modal');
-    const modalImage = document.getElementById('modal-image');
-    const modalTitle = document.getElementById('modal-title');
+    
+    // --- Mobile Menu Logic ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    certificationItems.forEach(item => {
-        item.addEventListener('mouseenter', (e) => {
-            const imgSrc = item.getAttribute('data-img');
-            const imgTitle = item.getAttribute('data-title');
+    function toggleMenu() {
+        const isHidden = mobileMenu.classList.contains('translate-x-full');
+        if (isHidden) {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+    }
 
-            modalImage.src = imgSrc;
-            modalImage.alt = imgTitle;
-            modalTitle.textContent = imgTitle;
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
 
-            // Position the modal near the hovered item
-            const itemRect = item.getBoundingClientRect();
-            const modalRect = certificationModal.getBoundingClientRect();
-
-            let top = itemRect.top + window.scrollY + itemRect.height / 2;
-            let left = itemRect.right + window.scrollX + 20; // 20px to the right of the item
-
-            // Adjust if modal goes off-screen to the right
-            if (left + modalRect.width > window.innerWidth + window.scrollX) {
-                left = itemRect.left + window.scrollX - modalRect.width - 20; // To the left
-            }
-
-            // Adjust if modal goes off-screen to the top
-            if (top - modalRect.height / 2 < window.scrollY) {
-                top = window.scrollY + modalRect.height / 2 + 10; // 10px from top
-            }
-
-            // Adjust if modal goes off-screen to the bottom
-            if (top + modalRect.height / 2 > window.innerHeight + window.scrollY) {
-                top = window.innerHeight + window.scrollY - modalRect.height / 2 - 10; // 10px from bottom
-            }
-
-            certificationModal.style.top = `${top}px`;
-            certificationModal.style.left = `${left}px`;
-
-            certificationModal.classList.remove('hidden');
-        });
-
-        item.addEventListener('mouseleave', () => {
-            certificationModal.classList.add('hidden');
-        });
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
     });
 
-    // LinkedIn Carousel Logic
-    const carouselItems = document.querySelectorAll('[data-carousel-item]');
-    const prevButton = document.querySelector('[data-carousel-prev]');
-    const nextButton = document.querySelector('[data-carousel-next]');
-    const indicatorsContainer = document.querySelector('[data-carousel-indicators]'); // Assuming you'll add this attribute to the indicators div
+    // --- Scroll Reveal Animation ---
+    const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
-    let currentItem = 0;
-    const totalItems = carouselItems.length;
-
-    function showItem(index) {
-        carouselItems.forEach((item, i) => {
-            if (i === index) {
-                item.classList.remove('translate-x-full', '-translate-x-full');
-                item.classList.add('translate-x-0', 'z-20');
-            } else if (i < index) {
-                item.classList.remove('translate-x-0', 'z-20');
-                item.classList.add('-translate-x-full', 'z-10');
-            } else {
-                item.classList.remove('translate-x-0', 'z-20');
-                item.classList.add('translate-x-full', 'z-10');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                observer.unobserve(entry.target); // Only animate once
             }
         });
-        updateIndicators(index);
-    }
+    }, {
+        root: null,
+        threshold: 0.15, // Trigger when 15% of the element is visible
+        rootMargin: "0px 0px -50px 0px"
+    });
 
-    function nextItem() {
-        currentItem = (currentItem + 1) % totalItems;
-        showItem(currentItem);
-    }
+    revealElements.forEach(el => revealObserver.observe(el));
 
-    function prevItem() {
-        currentItem = (currentItem - 1 + totalItems) % totalItems;
-        showItem(currentItem);
-    }
-
-    function updateIndicators(activeIndex) {
-        if (indicatorsContainer) {
-            Array.from(indicatorsContainer.children).forEach((indicator, i) => {
-                if (i === activeIndex) {
-                    indicator.classList.add('bg-blue-500');
-                    indicator.classList.remove('bg-gray-600', 'hover:bg-gray-500');
-                } else {
-                    indicator.classList.remove('bg-blue-500');
-                    indicator.classList.add('bg-gray-600', 'hover:bg-gray-500');
-                }
-            });
+    // --- Navbar Scroll Effect ---
+    const navbar = document.getElementById('navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('bg-gray-900/95', 'backdrop-blur-md', 'shadow-lg');
+            navbar.classList.remove('py-4');
+            navbar.classList.add('py-2');
+        } else {
+            navbar.classList.remove('bg-gray-900/95', 'backdrop-blur-md', 'shadow-lg');
+            navbar.classList.remove('py-2');
+            navbar.classList.add('py-4');
         }
-    }
+    });
 
-    if (prevButton && nextButton && carouselItems.length > 0) {
-        prevButton.addEventListener('click', prevItem);
-        nextButton.addEventListener('click', nextItem);
-
-        // Initialize indicators
-        if (indicatorsContainer) {
-            Array.from(indicatorsContainer.children).forEach((indicator, i) => {
-                indicator.addEventListener('click', () => {
-                    currentItem = i;
-                    showItem(currentItem);
-                });
-            });
-        }
-
-        showItem(currentItem); // Show the first item initially
-    }
 });

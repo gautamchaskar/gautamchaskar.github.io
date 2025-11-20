@@ -1,39 +1,118 @@
-.certification-item {
-    transition: transform 0.3s ease-in-out;
-    position: relative; /* Needed for z-index to work */
-    /* Removed overflow: hidden; to prevent clipping */
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.certification-item:hover {
-    transform: scale(1.03); /* Scale the entire box */
-    z-index: 10; /* Bring to front on hover */
+::-webkit-scrollbar-track {
+    background: #111827; 
 }
 
-/* Removed image-specific hover styles */
-
-#skills li {
-    transition: transform 0.3s ease-in-out;
-    position: relative; /* Needed for z-index to work */
+::-webkit-scrollbar-thumb {
+    background: #00A1E0; 
+    border-radius: 5px;
 }
 
-#skills li:hover {
-    transform: scale(1.03);
-    z-index: 10;
+::-webkit-scrollbar-thumb:hover {
+    background: #0077a3; 
 }
 
-/* Carousel styles */
-.carousel-item {
-    transition: transform 0.7s ease-in-out;
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
-.carousel-item.active {
-    transform: translateX(0);
+.animate-float {
+    animation: float 6s ease-in-out infinite;
 }
 
-.carousel-item.left {
-    transform: translateX(-100%);
+.animate-float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 3s;
 }
 
-.carousel-item.right {
-    transform: translateX(100%);
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+/* Reveal Animations */
+.reveal-up, .reveal-left, .reveal-right {
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+.reveal-up {
+    transform: translateY(50px);
+}
+
+.reveal-left {
+    transform: translateX(-50px);
+}
+
+.reveal-right {
+    transform: translateX(50px);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Glassmorphism Utilities */
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Skill Tags */
+.skill-tag {
+    @apply px-3 py-1 rounded-full bg-gray-700 text-xs font-medium text-gray-300 border border-gray-600 hover:border-salesforce-blue hover:text-white transition-colors cursor-default;
+    /* Tailwind @apply doesn't work in vanilla CSS file without build step, so expanding manually below */
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background-color: #374151;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: #D1D5DB;
+    border: 1px solid #4B5563;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    border-color: #00A1E0;
+    color: #ffffff;
+}
+
+/* Mobile Menu */
+.mobile-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00A1E0;
+    transition: width 0.3s ease;
+}
+
+.mobile-link:hover::after {
+    width: 100%;
 }
