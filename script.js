@@ -75,14 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("contact-email").value;
       const message = document.getElementById("contact-message").value;
 
-      const subject = `Contact via Portfolio from ${name}`;
-      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      const text = `*New Inquiry from Portfolio*\n\n*Name:* ${name}\n*Email:* ${email}\n\n*Message:*\n${message}`;
 
-      const mailtoLink = `mailto:chaskargautam@gmail.com?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`;
+      const whatsappUrl = `https://wa.me/+917709171839?text=${encodeURIComponent(
+        text
+      )}`;
 
-      window.location.href = mailtoLink;
+      window.open(whatsappUrl, "_blank");
     });
   }
 });
