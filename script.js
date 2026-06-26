@@ -84,4 +84,43 @@ document.addEventListener("DOMContentLoaded", () => {
       window.open(whatsappUrl, "_blank");
     });
   }
+
+  // --- Dynamic Experience Duration ---
+  const durationElements = document.querySelectorAll(".job-duration");
+  durationElements.forEach((el) => {
+    const startStr = el.getAttribute("data-start");
+    const endStr = el.getAttribute("data-end");
+    if (!startStr) return;
+
+    const [startYear, startMonth] = startStr.split("-").map(Number);
+    let endYear, endMonth;
+
+    if (endStr === "present") {
+      const today = new Date();
+      endYear = today.getFullYear();
+      endMonth = today.getMonth() + 1; // 1-indexed (Jan = 1, Dec = 12)
+    } else {
+      [endYear, endMonth] = endStr.split("-").map(Number);
+    }
+
+    // Calculate total months inclusive
+    const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
+    
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    let durationStr = "";
+    if (years > 0) {
+      durationStr += `${years} yr${years > 1 ? "s" : ""}`;
+    }
+    if (months > 0) {
+      if (durationStr) durationStr += " ";
+      durationStr += `${months} mo${months > 1 ? "s" : ""}`;
+    }
+
+    if (durationStr) {
+      const originalText = el.textContent.split(" · ")[0];
+      el.textContent = `${originalText} · ${durationStr}`;
+    }
+  });
 });
